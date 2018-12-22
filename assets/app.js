@@ -8,7 +8,7 @@ function loadvideos(queryString){
         part:'snippet',
         key: key,
         maxResults:5,
-        q:queryString
+        q:queryString.data.subject
     };
     $.getJSON(URL,options,function(data){
         console.log(data);
@@ -16,8 +16,9 @@ function loadvideos(queryString){
         showVideos(data);
     });
 }
-function loadBooks(){
-    var h="basic html for beginners";
+function loadBooks(books){
+    
+    var h=books.data.subject;
     $.getJSON("https://www.googleapis.com/books/v1/volumes?q="+h, function(data){
         console.log(data);
         showBooks(data);
@@ -25,25 +26,25 @@ function loadBooks(){
         
 }
 
-function htmlvideos(){
-     loadBooks();
-    // loadvideos("html");
-}
-function cssvideos(){
-    loadvideos("css");
-}
-function jsvideos(){
-    loadvideos("javascript");
-}
-function jqvideos(){
-    loadvideos("jQuery");
-}
-function nodevideos(){
-    loadvideos("node.js");
-}
-function reactvideos(){
-    loadvideos("react.js");
-}
+// function htmlvideos(){
+//      loadBooks();
+//     // loadvideos("html");
+// }
+// function cssvideos(){
+//     loadvideos("css");
+// }
+// function jsvideos(){
+//     loadvideos("javascript");
+// }
+// function jqvideos(){
+//     loadvideos("jQuery");
+// }
+// function nodevideos(){
+//     loadvideos("node.js");
+// }
+// function reactvideos(){
+//     loadvideos("react.js");
+// }
     
 function showVideos(data){
     $("main").empty();
@@ -57,14 +58,22 @@ function showBooks(data){
     console.log(data);
     $("main").empty();
     for(var i=0; i<10; i++){
-        console.log("no "+i+"."+data.items[i].volumeInfo.description);
-        $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><p>"+data.items[i].volumeInfo.description.substring(0,100)+"</p><a href='"+data.items[i].volumeInfo.infoLink+"'><button>Read More</button></a></div></article>");
+        // console.log("no "+i+"."+data.items[i].volumeInfo.description);
+        $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><br><a target='blank' href='"+data.items[i].volumeInfo.previewLink+"'><button class='btn btn-dark'>Preview</button></a><a target='blank' href='"+data.items[i].saleInfo.buyLink+"'><button class='btn btn-dark'>Buy</button></a></div></article>");
      }
 }
 
-$(document).on("click","#htm",htmlvideos);
-$(document).on("click","#cs",cssvideos);
-$(document).on("click","#js",jsvideos);
-$(document).on("click","#jq",jqvideos);
-$(document).on("click","#node",nodevideos);
-$(document).on("click","#rt",reactvideos);
+
+// $("#htm").on("click", {subject: "html"},loadvideos);
+// $("#cs").on("click", {subject: "css"},loadvideos);
+// $("#js").on("click", {subject: "javascript"},loadvideos);
+// $("#jq").on("click", {subject: "jQuery"},loadvideos);
+// $("#rt").on("click", {subject: "react.js"},loadvideos);
+// $("#node").on("click", {subject: "node.js"},loadvideos);
+
+$("#htm").on("click", {subject: "html basics"},loadBooks);
+// $("#cs").on("click", {subject: "css"},loadvideos);
+// $("#js").on("click", {subject: "javascript"},loadvideos);
+// $("#jq").on("click", {subject: "jQuery"},loadvideos);
+// $("#rt").on("click", {subject: "react.js"},loadvideos);
+// $("#node").on("click", {subject: "node.js"},loadvideos);

@@ -10,16 +10,17 @@ article{
 article:hover{
     border:2px solid red; 
  }
-p,
-h4{
+ .details{
     /* padding:2%; */
-    float: left;
+    /* float: left; */
     margin-left: 5%;
+
 }
-p{
+.btn-dark{ 
     top:4%;
+    margin-left: 1%;
 }
-section{
-    border:2px solid black;
-    padding:1%;
+
+img{
+    height:150px;
 }
