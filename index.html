@@ -5,34 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tidder</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+    <title>tiddeR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 
 </head>
 
-<body>
-    <div class="container">
-        <h1 class="display-3">Web Development Resources</h1>
-        
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-2">
-                <div class="btn-group-vertical">
-                   <button type="button" class="btn btn-secondary" id="htm">HTML</button>
-                   <button type="button" class="btn btn-secondary" id="cs">CSS</button>
-                   <button type="button" class="btn btn-secondary" id="js">JavaScript</button>
-                   <button type="button" class="btn btn-secondary" id="jq">jQuery</button>
-                   <button type="button" class="btn btn-secondary" id="node">Node.Js</button>
-                   <button type="button" class="btn btn-secondary" id="rt">React</button>
-                </div>
-            </div>
-        <div class="col-7">
-            <main>
 
-            </main>       
+
+
+<body>
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">tiddeR</h1>
+            <p class="lead">Outstanding community. Invaluable support. Infinite possibilites</p>
         </div>
+<<<<<<< HEAD
         <div class="col-3">
             <div class="card">
                 <div class="card-header">
@@ -52,32 +43,137 @@
                             <div class="col-sm-10">
                               <button id ="submit-button" type="submit" class="btn btn-primary">Submit</button>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div><br>
-            <div class="card">
-                <div class="card-header">
-                  Reviews
-                </div>
-                <div class="card-body">
-                    <table class="table table-borderless">
-                        <thead>
-                          
-                        </thead>
-                        <tbody>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-                
-        </div>
+=======
     </div>
+
+
+
+
+
+    <div class="container" id="topicLinks">
+
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="term" href="#">Terminal</a></button>
+                <div class="books" id="term-b"></div>
+                <div class="videos" id="term-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link active" id="html" href="#">HTML</a></button>
+                <div class="books" id="html-b"></div>
+                <div class="videos" id="sql-b"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="cs" href="#">CSS</a></button>
+                <div class="books" id="bs-b"></div>
+                <div class="videos" id="bs-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="bs" href="#">Bootstrap</a></button>
+                <div class="books" id="bs-b"></div>
+                <div class="videos" id="bs-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="js" href="#">JavaScript</a></button>
+                <div class="books" id="js-b"></div>
+                <div class="videos" id="js-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="jq" href="#">jQuery</a></button>
+                <div class="books" id="jq-b"></div>
+                <div class="videos" id="jq-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="api" href="#">API</a></button>
+                <div class="books" id="api-b"></div>
+                <div class="videos" id="api-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="node" href="#">Node.Js</a></button>
+                <div class="books" id="node-b"></div>
+                <div class="videos" id="node-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="rt" href="#">React</a></button>
+                <div class="books" id="rt-b"></div>
+                <div class="videos" id="rt-v"></div>
+            </li>
+            <br>
+            <li class="nav-item">
+                <button type="button" class="buttonLinks"><a class="nav-link" id="sql" href="#">SQL</a></button>
+                <div class="books" id="sql-b"></div>
+                <div class="videos" id="sql-v"></div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header">
+                Feedback
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">UserName</label>
+                        <input type="text" class="form-control" id="UserName">
+                    </div>
+                    <div class="form-group">
+                        <label for="Feedback">Feedback</label>
+                        <textarea class="form-control" id="Feedback" rows="3"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+>>>>>>> a3b25bec53567567acd870b57c2c80dae760d7b5
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><br>
+        <div class="card">
+            <div class="card-header">
+                Reviews
+            </div>
+            <div class="card-body">
+                <table class="table table-borderless">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    </div>
+<<<<<<< HEAD
     
     
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>   
+=======
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+>>>>>>> a3b25bec53567567acd870b57c2c80dae760d7b5
     <script src="assets/app.js"></script>
 </body>
 
