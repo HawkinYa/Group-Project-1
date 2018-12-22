@@ -1,3 +1,83 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBzX5L4ZuMt0CMnlzfHWUPXPdAifCFzYug",
+    authDomain: "tidder-94e9c.firebaseapp.com",
+    databaseURL: "https://tidder-94e9c.firebaseio.com",
+    projectId: "tidder-94e9c",
+    storageBucket: "tidder-94e9c.appspot.com",
+    messagingSenderId: "1030070446854"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+
+  var name = "";
+  var feedback = "";
+
+  
+
+
+  
+  $("#submit-button").on("click", function(event) {
+      event.preventDefault();
+       name = $("#UserName").val().trim();
+       feedback = $("#Feedback").val().trim();
+       console.log(name+feedback);
+       $("#UserName").val("");
+       $("#Feedback").val("");
+       storeValues();
+       
+       
+
+     
+
+    });
+       function storeValues(){
+           database.ref().push({
+               name:name,
+               feedback:feedback
+               
+               
+            })
+            
+        }
+        
+        
+        
+        
+        
+        
+        database.ref().on("child_added", function(snapChild){
+            console.log(snapChild.val().feedback);
+            console.log(snapChild.val().name);
+            var row = $("<tr>");
+            var nameTd=$("<td>").text(snapChild.val().name);
+            var feedTd=$("<td>").text(snapChild.val().feedback);
+            row.append(nameTd).append(feedTd);
+            $("thead").append(row);
+            
+            
+        });
+        
+        
+        
+        
+      
+  
+      
+
+  
+  
+
+
+
+     
+     
+     
+ 
+ 
+  
+
+
 var key="AIzaSyDa1T6i-oZRysekxLrAGqbpH5kuJvYAkdk";
 // var playlistId="UU29ju8bIPH5as8OGnQzwJyA";
 var URL="https://www.googleapis.com/youtube/v3/search";
