@@ -10,37 +10,17 @@ article{
 article:hover{
     border:2px solid red; 
  }
-p,
-h4{
+ .details{
     /* padding:2%; */
-    float: left;
+    /* float: left; */
     margin-left: 5%;
+
 }
-p{
+.btn-dark{ 
     top:4%;
-}
-section{
-    border:2px solid black;
-    padding:1%;
+    margin-left: 1%;
 }
 
-
-
-
-
-
-
-
-
-/* hunter test css for html placement */
-#topicLinks {
-    background:pink;
-    border-radius: 10px;
-    margin-left:20px;
-    width: 170px;
-    height:750px;
-}
-
-.buttonLinks {
-    width: 130px;
+img{
+    height:150px;
 }
