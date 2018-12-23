@@ -1,62 +1,62 @@
-// Initialize Firebase
-// var config = {
-//     apiKey: "AIzaSyBzX5L4ZuMt0CMnlzfHWUPXPdAifCFzYug",
-//     authDomain: "tidder-94e9c.firebaseapp.com",
-//     databaseURL: "https://tidder-94e9c.firebaseio.com",
-//     projectId: "tidder-94e9c",
-//     storageBucket: "tidder-94e9c.appspot.com",
-//     messagingSenderId: "1030070446854"
-//   };
-//   firebase.initializeApp(config);
-//   var database = firebase.database();
+//Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBzX5L4ZuMt0CMnlzfHWUPXPdAifCFzYug",
+    authDomain: "tidder-94e9c.firebaseapp.com",
+    databaseURL: "https://tidder-94e9c.firebaseio.com",
+    projectId: "tidder-94e9c",
+    storageBucket: "tidder-94e9c.appspot.com",
+    messagingSenderId: "1030070446854"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
 
-//   var name = "";
-//   var feedback = "";
-
-  
-
+  var name = "";
+  var feedback = "";
 
   
-//   $("#submit-button").on("click", function(event) {
-//       event.preventDefault();
-//        name = $("#UserName").val().trim();
-//        feedback = $("#Feedback").val().trim();
-//        console.log(name+feedback);
-//        $("#UserName").val("");
-//        $("#Feedback").val("");
-//        storeValues();
+
+
+  
+  $("#submit-button").on("click", function(event) {
+      event.preventDefault();
+       name = $("#UserName").val().trim();
+       feedback = $("#Feedback").val().trim();
+       console.log(name+feedback);
+       $("#UserName").val("");
+       $("#Feedback").val("");
+       storeValues();
        
        
 
      
 
-//     });
-//        function storeValues(){
-//            database.ref().push({
-//                name:name,
-//                feedback:feedback
+    });
+       function storeValues(){
+           database.ref().push({
+               name:name,
+               feedback:feedback
                
                
-//             })
+            })
             
-//         }
+        }
         
         
         
         
         
         
-//         database.ref().on("child_added", function(snapChild){
-//             console.log(snapChild.val().feedback);
-//             console.log(snapChild.val().name);
-//             var row = $("<tr>");
-//             var nameTd=$("<td>").text(snapChild.val().name);
-//             var feedTd=$("<td>").text(snapChild.val().feedback);
-//             row.append(nameTd).append(feedTd);
-//             $("thead").append(row);
+        database.ref().on("child_added", function(snapChild){
+            console.log(snapChild.val().feedback);
+            console.log(snapChild.val().name);
+            var row = $("<tr>");
+            var nameTd=$("<td>").text(snapChild.val().name);
+            var feedTd=$("<td>").text(snapChild.val().feedback);
+            row.append(nameTd).append(feedTd);
+            $("thead").append(row);
             
             
-//         });
+        });
         
         
         
@@ -79,7 +79,6 @@
 
 
 var key="AIzaSyDa1T6i-oZRysekxLrAGqbpH5kuJvYAkdk";
-// var playlistId="UU29ju8bIPH5as8OGnQzwJyA";
 var URL="https://www.googleapis.com/youtube/v3/search";
 
 
@@ -88,7 +87,7 @@ function loadvideos(queryString){
         part:'snippet',
         key: key,
         maxResults:5,
-        q:queryString
+        q:queryString.data.subject
     };
     $.getJSON(URL,options,function(data){
         console.log(data);
@@ -96,8 +95,8 @@ function loadvideos(queryString){
         showVideos(data);
     });
 }
-function loadBooks(h){
-    // var h="basic html for beginners";
+function loadBooks(term){
+    var h=term.data.subject;
     $.getJSON("https://www.googleapis.com/books/v1/volumes?q="+h, function(data){
         console.log(data);
         showBooks(data);
@@ -105,28 +104,6 @@ function loadBooks(h){
         
 }
 
-function htmlvideos(){
-    loadvideos("html");
-}
-function htmlBooks(){
-    loadBooks("basic html for beginners");
-   // loadvideos("html");
-}
-function cssvideos(){
-    loadvideos("css");
-}
-function jsvideos(){
-    loadvideos("javascript");
-}
-function jqvideos(){
-    loadvideos("jQuery");
-}
-function nodevideos(){
-    loadvideos("node.js");
-}
-function reactvideos(){
-    loadvideos("react.js");
-}
     
 function showVideos(data){
     $("main").empty();
@@ -140,16 +117,34 @@ function showBooks(data){
     console.log(data);
     $("main").empty();
     for(var i=0; i<10; i++){
-        console.log("no "+i+"."+data.items[i].volumeInfo.description);
         $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><a href='"+data.items[i].volumeInfo.infoLink+"'><button>Read More</button></a></div></article>");
      }
 }
 
-$(document).on("click","#htmlVideos",htmlvideos);
-$(document).on("click","#htmlBooks",htmlBooks);
+$("#htmlVideos").on("click", {subject: "html basics"},loadvideos);
+$("#cssVideos").on("click", {subject: "css"},loadvideos);
+$("#bsVideos").on("click", {subject: "bootstrap"},loadvideos);
+$("#jsVideos").on("click", {subject: "javascript basics"},loadvideos);
+$("#jqVideos").on("click", {subject: "jquery"},loadvideos);
+$("#exVideos").on("click", {subject: "express. js"},loadvideos);
+$("#reactVideos").on("click", {subject: "react.js"},loadvideos);
+$("#nodeVideos").on("click", {subject: "node.js"},loadvideos);
+$("#mongoVideos").on("click", {subject: "mongo Db"},loadvideos);
+$("#sqlVideos").on("click", {subject: "my sql"},loadvideos);
+$("#gitVideos").on("click", {subject: "git hub"},loadvideos);
+$("#javaVideos").on("click", {subject: "java"},loadvideos);
 
-// $(document).on("click","#cs",cssvideos);
-// $(document).on("click","#js",jsvideos);
-// $(document).on("click","#jq",jqvideos);
-// $(document).on("click","#node",nodevideos);
-// $(document).on("click","#rt",reactvideos);
+
+
+$("#htmlBooks").on("click", {subject: "html basics"},loadBooks);
+$("#cssBooks").on("click", {subject: "css"},loadBooks);
+$("#bsBooks").on("click", {subject: "bootstrap"},loadBooks);
+$("#jsBooks").on("click", {subject: "javascript basics"},loadBooks);
+$("#jqBooks").on("click", {subject: "jquery"},loadBooks);
+$("#exBooks").on("click", {subject: "express. js"},loadBooks);
+$("#reactBooks").on("click", {subject: "react.js"},loadBooks);
+$("#nodeBooks").on("click", {subject: "node.js"},loadBooks);
+$("#mongoBooks").on("click", {subject: "mongo Db"},loadBooks);
+$("#sqlBooks").on("click", {subject: "my sql"},loadBooks);
+$("#gitBooks").on("click", {subject: "git hub"},loadBooks);
+$("#javaBooks").on("click", {subject: "java"},loadBooks);
