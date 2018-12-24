@@ -55,9 +55,9 @@ var config = {
             row.append(nameTd).append(feedTd);
             $("thead").append(row);
             
-            
-        });
         
+    });
+    
         
         
         
