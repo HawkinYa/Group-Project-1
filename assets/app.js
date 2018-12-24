@@ -86,7 +86,7 @@ function loadvideos(queryString){
     var options={
         part:'snippet',
         key: key,
-        maxResults:5,
+        maxResults:10,
         q:queryString.data.subject
     };
     $.getJSON(URL,options,function(data){
@@ -118,7 +118,7 @@ function showBooks(data){
     console.log(data);
     $("main").empty();
     for(var i=0; i<10; i++){
-        $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><a href='"+data.items[i].volumeInfo.infoLink+"'><button>Read More</button></a></div></article>");
+        $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"' alt='image not found' id='bookImage'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><p>"+data.items[i].searchInfo.textSnippet.substring(0,100)+"</p><a href='"+data.items[i].volumeInfo.previewLink+"'><button class='btn btn-secondary' id='bookPreviewBt'>Preview</button></a></div></article>");
      }
 }
 
@@ -140,7 +140,7 @@ $("#javaVideos").on("click", {subject: "java"},loadvideos);
 $("#htmlBooks").on("click", {subject: "html basics"},loadBooks);
 $("#cssBooks").on("click", {subject: "css"},loadBooks);
 $("#bsBooks").on("click", {subject: "bootstrap"},loadBooks);
-$("#jsBooks").on("click", {subject: "javascript basics"},loadBooks);
+$("#jsBooks").on("click", {subject: "javascript"},loadBooks);
 $("#jqBooks").on("click", {subject: "jquery"},loadBooks);
 $("#exBooks").on("click", {subject: "express. js"},loadBooks);
 $("#reactBooks").on("click", {subject: "react.js"},loadBooks);

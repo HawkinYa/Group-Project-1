@@ -1,16 +1,18 @@
 main{
-    padding:2%;
+    padding:0px 2%;
 
 }
 article{
     display: flex;
-    margin:2%;
+    margin:0% 2% 2% 2%;
     padding:2%;
 }
 article:hover{
     border:2px solid red; 
  }
- .details{
+p,
+h4,
+#bookPreviewBt{
     /* padding:2%; */
     /* float: left; */
     margin-left: 5%;
@@ -21,13 +23,22 @@ article:hover{
     margin-left: 1%;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 166c81fccd88a21ed44fc7e5d8bd9efc7557c4af
 section{
     border:2px solid black;
     padding:1%;
 }
 .btn-group{
     margin-bottom: 2%;
+}
+.dropdown-toggle-split{
+    max-width:22%;
+}
+#bookImage{
+    height:130px;
 }
 input:invalid {
     border: 2px dashed red;
@@ -46,7 +57,10 @@ input:invalid {
 
 
 
+<<<<<<< HEAD
 >>>>>>> 1fa295a4a70d9b564eefd3f3dca78377a17920d3
+=======
+>>>>>>> 166c81fccd88a21ed44fc7e5d8bd9efc7557c4af
 
 img{
     height:150px;
