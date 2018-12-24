@@ -17,7 +17,7 @@ var config = {
 
 
   
-  $("#submit-button").on("click", function(event) {
+  $("#s-button").on("click", function(event) {
       event.preventDefault();
        name = $("#UserName").val().trim();
        feedback = $("#Feedback").val().trim();
@@ -149,3 +149,4 @@ $("#mongoBooks").on("click", {subject: "mongo Db"},loadBooks);
 $("#sqlBooks").on("click", {subject: "my sql"},loadBooks);
 $("#gitBooks").on("click", {subject: "git hub"},loadBooks);
 $("#javaBooks").on("click", {subject: "java"},loadBooks);
+

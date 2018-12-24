@@ -20,6 +20,33 @@ article:hover{
     top:4%;
     margin-left: 1%;
 }
+<<<<<<< HEAD
+=======
+section{
+    border:2px solid black;
+    padding:1%;
+}
+.btn-group{
+    margin-bottom: 2%;
+}
+input:invalid {
+    border: 2px dashed red;
+  }
+  
+  input:valid {
+    border: 2px solid black;
+  }
+  textarea:invalid {
+    border: 2px dashed red;
+  }
+  
+  textarea:valid {
+    border: 2px solid black;
+  }
+
+
+
+>>>>>>> 1fa295a4a70d9b564eefd3f3dca78377a17920d3
 
 img{
     height:150px;
