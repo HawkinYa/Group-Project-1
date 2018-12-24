@@ -95,8 +95,9 @@ function loadvideos(queryString){
         showVideos(data);
     });
 }
-function loadBooks(term){
-    var h=term.data.subject;
+function loadBooks(books){
+    
+    var h=books.data.subject;
     $.getJSON("https://www.googleapis.com/books/v1/volumes?q="+h, function(data){
         console.log(data);
         showBooks(data);

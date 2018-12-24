@@ -16,9 +16,11 @@ h4,
     /* padding:2%; */
     /* float: left; */
     margin-left: 5%;
+
 }
-p{
+.btn-dark{ 
     top:4%;
+    margin-left: 1%;
 }
 section{
     border:2px solid black;
@@ -51,19 +53,9 @@ input:invalid {
 
 
 
-
-
-
-
-/* hunter test css for html placement */
-#topicLinks {
-    background:pink;
-    border-radius: 10px;
-    margin-left:20px;
-    width: 170px;
-    height:750px;
+img{
+    height:150px;
 }
-
-.buttonLinks {
-    width: 130px;
+.btn-group{
+    margin-top: 2%;
 }
