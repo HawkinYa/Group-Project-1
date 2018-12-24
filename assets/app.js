@@ -19,6 +19,7 @@ var config = {
   
   $("#s-button").on("click", function(event) {
       event.preventDefault();
+      this.submit();console.log(this);
        name = $("#UserName").val().trim();
        feedback = $("#Feedback").val().trim();
        console.log(name+feedback);
