@@ -50,7 +50,9 @@ input:invalid {
     border: 2px solid black;
   }
 
-
+  #feedbackBt{
+      padding:10px 33%;
+  }
 
 
 img{
@@ -58,4 +60,7 @@ img{
 }
 .btn-group{
     margin-top: 2%;
+}
+*{
+    box-sizing: border-box;
 }
