@@ -1,5 +1,8 @@
 main{
     padding:0px 2%;
+    height:600px;
+    /* border:2px solid rgb(11, 165, 185); */
+    overflow: auto;
 
 }
 article{
@@ -34,9 +37,7 @@ section{
 .btn-group{
     margin-bottom: 2%;
 }
-.dropdown-toggle-split{
-    max-width:22%;
-}
+
 #bookImage{
     height:130px;
 }
@@ -55,7 +56,9 @@ input:invalid {
     border: 2px solid black;
   }
 
-
+  #feedbackBt{
+      padding:10px 33%;
+  }
 
 <<<<<<< HEAD
 >>>>>>> 1fa295a4a70d9b564eefd3f3dca78377a17920d3
@@ -65,6 +68,24 @@ input:invalid {
 img{
     height:150px;
 }
-.btn-group{
+.dropdown{
     margin-top: 2%;
+    min-width: 100%;
+
+}
+*{
+    box-sizing: border-box;
+}
+.card-header{
+    background: rgb(11, 165, 185);
+    color:white;
+    font-size: 2vmin;
+    text-align: center;
+}
+iframe{
+    height:200px;
+    width:100%;
+}
+.card-group{
+    border:2px solid  rgb(11, 165, 185);
 }
