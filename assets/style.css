@@ -1,5 +1,8 @@
 main{
     padding:0px 2%;
+    height:600px;
+    /* border:2px solid rgb(11, 165, 185); */
+    overflow: auto;
 
 }
 article{
@@ -29,9 +32,7 @@ section{
 .btn-group{
     margin-bottom: 2%;
 }
-.dropdown-toggle-split{
-    max-width:22%;
-}
+
 #bookImage{
     height:130px;
 }
@@ -60,6 +61,8 @@ img{
 }
 .dropdown{
     margin-top: 2%;
+    min-width: 100%;
+
 }
 *{
     box-sizing: border-box;
@@ -72,6 +75,7 @@ img{
 }
 iframe{
     height:200px;
+    width:100%;
 }
 .card-group{
     border:2px solid  rgb(11, 165, 185);
