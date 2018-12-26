@@ -58,9 +58,21 @@ input:invalid {
 img{
     height:150px;
 }
-.btn-group{
+.dropdown{
     margin-top: 2%;
 }
 *{
     box-sizing: border-box;
+}
+.card-header{
+    background: rgb(11, 165, 185);
+    color:white;
+    font-size: 2vmin;
+    text-align: center;
+}
+iframe{
+    height:200px;
+}
+.card-group{
+    border:2px solid  rgb(11, 165, 185);
 }

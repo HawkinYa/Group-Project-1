@@ -105,14 +105,30 @@ function loadBooks(books){
         
 }
 
-    
+
+
+
+
+
 function showVideos(data){
     $("main").empty();
     console.log(data);
     for(var i=0; i<data.items.length; i++){
-        $("main").append("<article><iframe width='200px' height='100px' src='https://www.youtube.com/embed/"+data.items[i].id.videoId+"' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe><div class='details'><h4>"+data.items[i].snippet.title+"</h4><p>"+data.items[i].snippet.description.substring(0,100)+"</p></div></article>");
-     }
+        $("main").append('<div class="card-group"><div class="card"><div class="card-body"><iframe  src="https://www.youtube.com/embed/'+data.items[i].id.videoId+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div><div class="card"><div class="card-body"><div class="details"><h4>'+data.items[i].snippet.title+'</h4><p>'+data.items[i].snippet.description.substring(0,100)+'</p></div></div></div></div><br>');
+    }
 }
+  
+  
+
+
+
+// function showVideos(data){
+//     $("main").empty();
+//     console.log(data);
+//     for(var i=0; i<data.items.length; i++){
+//         $("main").append("<article><iframe width='200px' height='100px' src='https://www.youtube.com/embed/"+data.items[i].id.videoId+"' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe><div class='details'><h4>"+data.items[i].snippet.title+"</h4><p>"+data.items[i].snippet.description.substring(0,100)+"</p></div></article>");
+//      }
+// }
 
 function showBooks(data){
     console.log(data);
