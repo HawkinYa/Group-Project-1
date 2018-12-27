@@ -20,6 +20,7 @@ var feedback1 = "";
 
 
 
+<<<<<<< HEAD
 
 $("#s-button").on("click", function (event) {
     event.preventDefault();
@@ -35,6 +36,37 @@ $("#s-button").on("click", function (event) {
 
     
 
+=======
+    });
+       function storeValues(){
+           database.ref().push({
+               name:name,
+               feedback:feedback
+               
+               
+            })
+            
+        }
+        
+        
+        
+        
+        
+        
+        database.ref().on("child_added", function(snapChild){
+            console.log(snapChild.val().feedback);
+            console.log(snapChild.val().name);
+            var row = $("<tr>");
+            // var nameTd=$("<th>").text(snapChild.val().name);
+            // var feedTd=$("<td>").text(snapChild.val().feedback);
+            // row.append(nameTd).append(feedTd);
+            // $("tbody").append(row);
+            
+
+            row.append('<div class="card"><div class="card-header" id="reviewHaeder">'+snapChild.val().name+'</div><div class="card-body"><p class="card-text">'+snapChild.val().feedback+'</p></div></div><br>');
+            $("tbody").append(row);
+    });
+>>>>>>> 17ce63fa5af442a04c0d2506de101539eab9cf58
     
 });
 function storeValues() {
@@ -147,9 +179,15 @@ function showVideos(data) {
 function showBooks(data) {
     console.log(data);
     $("#main").empty();
+<<<<<<< HEAD
     for (var i = 0; i < 10; i++) {
         $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-3"><img src="' + data.items[i].volumeInfo.imageLinks.thumbnail + '" alt="image not found" id="bookImage"></div><div class="col-12 col-md-9"><h4>' + data.items[i].volumeInfo.title + '</h4><p>' + data.items[i].searchInfo.textSnippet.substring(0, 100) + '</p><a href="' + data.items[i].volumeInfo.previewLink + '"><button class="btn btn-info" id="bookPreviewBt">Preview</button></a></div></div></div><br>');
     }
+=======
+    for(var i=0; i<10; i++){
+        $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-4"><img src="'+data.items[i].volumeInfo.imageLinks.thumbnail+'" alt="image not found" id="bookImage"></div><div class="col-12 col-md-8"><h4>'+data.items[i].volumeInfo.title+'</h4><p>'+data.items[i].searchInfo.textSnippet.substring(0,100)+'</p><a href="'+data.items[i].volumeInfo.previewLink+'"><button class="btn btn-info" id="bookPreviewBt">Preview</button></a></div></div></div><br>');
+     }
+>>>>>>> 17ce63fa5af442a04c0d2506de101539eab9cf58
 }
 
 
