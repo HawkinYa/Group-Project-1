@@ -8,6 +8,8 @@ var config = {
     messagingSenderId: "1030070446854"
   };
   firebase.initializeApp(config);
+  $("#s-button").hide();
+
   var database = firebase.database();
 
   var name = "";
@@ -19,6 +21,8 @@ var config = {
   
   $("#s-button").on("click", function(event) {
       event.preventDefault();
+      $("#complete").show();
+      $("#s-button").hide();
        name = $("#UserName").val().trim();
        feedback = $("#Feedback").val().trim();
        console.log(name+feedback);
@@ -40,6 +44,25 @@ var config = {
             })
             
         }
+
+        // Name can't be blank
+$('#UserName').on('input', function() {
+    var input=$(this);
+    var re=/^[A-Za-z]{2,15}$/;
+	var is_name=re.test(input.val());
+	if(is_name){input.removeClass("invalid").addClass("valid");$("#s-button").hide();$("#complete").show();}
+	else{input.removeClass("valid").addClass("invalid");$("#s-button").hide();$("#complete").show();}
+});
+
+$('#Feedback').on('input', function() {
+    var input=$(this);
+    var re=/^[A-Za-z ]{5,40}$/;
+	var is_feed=re.test(input.val());
+	if(is_feed){input.removeClass("invalid").addClass("valid");$("#s-button").show();$("#complete").hide();}
+	else{input.removeClass("valid").addClass("invalid");$("#s-button").hide();$("#complete").show();}
+});
+
+
         
         
         
