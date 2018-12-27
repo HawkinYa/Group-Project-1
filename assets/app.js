@@ -50,12 +50,14 @@ var config = {
             console.log(snapChild.val().feedback);
             console.log(snapChild.val().name);
             var row = $("<tr>");
-            var nameTd=$("<td>").text(snapChild.val().name);
-            var feedTd=$("<td>").text(snapChild.val().feedback);
-            row.append(nameTd).append(feedTd);
-            $("thead").append(row);
+            // var nameTd=$("<th>").text(snapChild.val().name);
+            // var feedTd=$("<td>").text(snapChild.val().feedback);
+            // row.append(nameTd).append(feedTd);
+            // $("tbody").append(row);
             
-        
+
+            row.append('<div class="card"><div class="card-header" id="reviewHaeder">'+snapChild.val().name+'</div><div class="card-body"><p class="card-text">'+snapChild.val().feedback+'</p></div></div><br>');
+            $("tbody").append(row);
     });
     
         
