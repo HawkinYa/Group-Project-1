@@ -10,23 +10,18 @@
     background: rgb(11, 165, 185);
     color:white;
     padding: 2%;
+    height:600px;
+    text-align: center;
 }
 .display-6{
-    padding:4%;
+    padding:2%;
     margin-left: 0px;
 }
 #mainDisplaySection{
     border:2px solid rgb(11, 165, 185);
     padding:2%;
 }
-article{
-    display: flex;
-    margin:0% 2% 2% 2%;
-    padding:2%;
-}
-article:hover{
-    border:2px solid red; 
- }
+
 p,
 h4,
 #bookPreviewBt{
@@ -35,21 +30,20 @@ h4,
     margin-left: 5%;
 
 }
-.btn-dark{ 
+/* .btn-dark{ 
     top:4%;
     margin-left: 1%;
-}
-section{
-    border:2px solid black;
-    padding:1%;
-}
-.btn-group{
-    margin-bottom: 2%;
-}
+} */
+
 
 #bookImage{
     height:130px;
+    width:50%;
+    margin-left: 
 }
+
+
+
 input:invalid {
     border: 2px dashed red;
   }
@@ -100,13 +94,35 @@ iframe{
 @media screen and (max-width: 640px){
     .display-6{
         font-size: 1em;
+        padding-right: 20px;
     }
+
+    #sidebar{
+        display: flex;
+        padding: 2%;
+        height:120px;
+        overflow: auto;
+        margin-bottom: 10%;
+    }
+    #main{
+        margin-bottom: 10%;
+    }
+  
 }
 
 @media screen and (max-width:768px) and (min-width:640px){ 
     .display-6{
         font-size: 1em;
-        padding-bottom:10%;
+        padding-right:50px;
+    }
+
+    #sidebar{
+        display:flex;
+        padding: 2%;
+        height:100px;
+        overflow: auto;
+        margin-bottom: 10%;
+    
     }
 }
 
