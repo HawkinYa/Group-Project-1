@@ -45,7 +45,7 @@ var config = {
             
         }
 
-        // Name can't be blank
+        
 $('#UserName').on('input', function() {
     var input=$(this);
     var re=/^[A-Za-z]{2,15}$/;
