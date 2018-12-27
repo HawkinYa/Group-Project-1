@@ -111,15 +111,29 @@ function loadBooks(books){
 
 
 function showVideos(data){
-    $("main").empty();
+    $("#main").empty();
     console.log(data);
     for(var i=0; i<data.items.length; i++){
-        $("main").append('<div class="card-group"><div class="card"><div class="card-body"><iframe  src="https://www.youtube.com/embed/'+data.items[i].id.videoId+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div><div class="card"><div class="card-body"><div class="details"><h4>'+data.items[i].snippet.title+'</h4><p>'+data.items[i].snippet.description.substring(0,100)+'</p></div></div></div></div><br>');
+        $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-3"><iframe  src="https://www.youtube.com/embed/'+data.items[i].id.videoId+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="col-12 col-md-9"><h4>'+data.items[i].snippet.title+'</h4><p>'+data.items[i].snippet.description.substring(0,100)+'</p></div></div></div><br>');
     }
 }
   
-  
+function showBooks(data){
+    console.log(data);
+    $("#main").empty();
+    for(var i=0; i<10; i++){
+        $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-3"><img src="'+data.items[i].volumeInfo.imageLinks.thumbnail+'" alt="image not found" id="bookImage"></div><div class="col-12 col-md-9"><h4>'+data.items[i].volumeInfo.title+'</h4><p>'+data.items[i].searchInfo.textSnippet.substring(0,100)+'</p><a href="'+data.items[i].volumeInfo.previewLink+'"><button class="btn btn-info" id="bookPreviewBt">Preview</button></a></div></div></div><br>');
+     }
+}
 
+
+// function showBooks(data){
+//     console.log(data);
+//     $("main").empty();
+//     for(var i=0; i<10; i++){
+//         $("main").append('<div class="card-group"><div class="card"><div class="card-body"><img src="'+data.items[i].volumeInfo.imageLinks.thumbnail+'" alt="image not found" id="bookImage"></div></div><div class="card"><div class="card-body"><div class="details"><h4>'+data.items[i].volumeInfo.title+'</h4><p>'+data.items[i].searchInfo.textSnippet.substring(0,100)+'</p><a href="'+data.items[i].volumeInfo.previewLink+'"><button class="btn btn-secondary" id="bookPreviewBt">Preview</button></a></div></div></div></div><br>');
+//      }
+// }
 
 
 // function showVideos(data){
@@ -130,13 +144,13 @@ function showVideos(data){
 //      }
 // }
 
-function showBooks(data){
-    console.log(data);
-    $("main").empty();
-    for(var i=0; i<10; i++){
-        $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"' alt='image not found' id='bookImage'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><p>"+data.items[i].searchInfo.textSnippet.substring(0,100)+"</p><a href='"+data.items[i].volumeInfo.previewLink+"'><button class='btn btn-secondary' id='bookPreviewBt'>Preview</button></a></div></article>");
-     }
-}
+// function showBooks(data){
+//     console.log(data);
+//     $("main").empty();
+//     for(var i=0; i<10; i++){
+//         $("main").append("<article><img src='"+data.items[i].volumeInfo.imageLinks.thumbnail+"' alt='image not found' id='bookImage'><div class='details'><h4>"+data.items[i].volumeInfo.title+"</h4><p>"+data.items[i].searchInfo.textSnippet.substring(0,100)+"</p><a href='"+data.items[i].volumeInfo.previewLink+"'><button class='btn btn-secondary' id='bookPreviewBt'>Preview</button></a></div></article>");
+//      }
+// }
 
 $("#htmlVideos").on("click", {subject: "html basics"},loadvideos);
 $("#cssVideos").on("click", {subject: "css"},loadvideos);
