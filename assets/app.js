@@ -41,6 +41,8 @@ $("#s-button").on("click", function (event) {
 $("#feedbackBt").on("click", function() {
     $("#UserName").val("");
     $("#Feedback").val("");
+    $("#Feedback").removeClass("valid");
+    $("#UserName").removeClass("valid");
     $("#UserName").addClass("invalid");
     $("#Feedback").addClass("invalid");
     $("#complete").show();
