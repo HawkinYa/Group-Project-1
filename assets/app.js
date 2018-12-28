@@ -64,7 +64,7 @@ function storeValues() {
 
 $('#UserName').on('input', function () {
     var input = $(this);
-    var re = /^[A-Za-z]{2,15}$/;
+    var re = /^[A-Za-z ]{5,25}$/;
     var is_name = re.test(input.val());
     if (is_name) { input.removeClass("invalid").addClass("valid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").show(); }
     else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").hide(); }
