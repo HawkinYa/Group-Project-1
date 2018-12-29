@@ -45,21 +45,33 @@ h4,
     width:50%;
     margin-left: 5%;
 }
+<<<<<<< HEAD
+input:required:invalid {
+=======
 
 
 
 input:invalid {
+>>>>>>> 17ce63fa5af442a04c0d2506de101539eab9cf58
     border: 2px dashed red;
   }
   
+<<<<<<< HEAD
   input:valid {
+=======
+  input:required:valid {
+>>>>>>> a45818fb39fa0e21cfbe8f33e4177db848f1b9cf
     border: 2px solid green;
   }
-  textarea:invalid {
+  textarea:required:invalid {
     border: 2px dashed red;
   }
   
+<<<<<<< HEAD
   textarea:valid {
+=======
+  textarea:required:valid {
+>>>>>>> a45818fb39fa0e21cfbe8f33e4177db848f1b9cf
     border: 2px solid green;
   }
 
