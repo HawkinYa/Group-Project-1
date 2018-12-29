@@ -6,132 +6,151 @@ var config = {
     projectId: "tidder-94e9c",
     storageBucket: "tidder-94e9c.appspot.com",
     messagingSenderId: "1030070446854"
-  };
-  firebase.initializeApp(config);
-  $("#s-button").hide();
-
-  var database = firebase.database();
-
-  var name = "";
-  var feedback = "";
-
-  
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+var name = "";
+var feedback = "";
+$("#complete").show();
+$("#s-button").hide();
+$("#Feedback").hide();
 
 
-  
-  $("#s-button").on("click", function(event) {
-      event.preventDefault();
-      $("#complete").show();
-      $("#s-button").hide();
-       name = $("#UserName").val().trim();
-       feedback = $("#Feedback").val().trim();
-       console.log(name+feedback);
-       $("#UserName").val("");
-       $("#Feedback").val("");
-       storeValues();
-       
-       
 
-     
 
-    });
-       function storeValues(){
-           database.ref().push({
-               name:name,
-               feedback:feedback
-               
-               
-            })
-            
-        }
 
-        
-$('#UserName').on('input', function() {
-    var input=$(this);
-    var re=/^[A-Za-z]{2,15}$/;
-	var is_name=re.test(input.val());
-	if(is_name){input.removeClass("invalid").addClass("valid");$("#s-button").hide();$("#complete").show();}
-	else{input.removeClass("valid").addClass("invalid");$("#s-button").hide();$("#complete").show();}
+
+
+$("#s-button").on("click", function (event) {
+    event.preventDefault();
+    $("#complete").show();
+    $("#s-button").hide();
+    name = $("#UserName").val().trim();
+    feedback = $("#Feedback").val().trim();
+    console.log(name + feedback);
+    $("#UserName").val("");
+    $("#Feedback").val("");
+    storeValues();
+
+
+
+
+
 });
 
-$('#Feedback').on('input', function() {
-    var input=$(this);
-    var re=/^[A-Za-z ]{5,40}$/;
-	var is_feed=re.test(input.val());
-	if(is_feed){input.removeClass("invalid").addClass("valid");$("#s-button").show();$("#complete").hide();}
-	else{input.removeClass("valid").addClass("invalid");$("#s-button").hide();$("#complete").show();}
+$("#feedbackBt").on("click", function() {
+    $("#UserName").val("");
+    $("#Feedback").val("");
+    $("#Feedback").removeClass("valid");
+    $("#UserName").removeClass("valid");
+    $("#UserName").addClass("invalid");
+    $("#Feedback").addClass("invalid");
+    $("#complete").show();
+    $("#s-button").hide();
+    $("#Feedback").hide();
+     
+
+});
+function storeValues() {
+    database.ref().push({
+        name: name,
+        feedback: feedback
+
+
+    })
+
+}
+
+
+$('#UserName').on('input', function () {
+    var input = $(this);
+    var re = /^[A-Za-z]{2,15}$/;
+    var is_name = re.test(input.val());
+    if (is_name) { input.removeClass("invalid").addClass("valid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").show(); }
+    else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").hide(); }
+});
+
+$('#Feedback').on('input', function () {
+    var input = $(this);
+    var re = /^[A-Za-z ]{5,40}$/;
+    var is_feed = re.test(input.val());
+    if (is_feed) { input.removeClass("invalid").addClass("valid"); $("#s-button").show(); $("#complete").hide(); }
+    else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); }
 });
 
 
-        
-        
-        
-        
-        
-        
-        database.ref().on("child_added", function(snapChild){
-            console.log(snapChild.val().feedback);
-            console.log(snapChild.val().name);
-            var row = $("<tr>");
-            row.append('<div class="card"><div class="card-header" id="reviewHaeder">'+snapChild.val().name+'</div><div class="card-body"><p class="card-text">'+snapChild.val().feedback+'</p></div></div><br>');
-            $("tbody").append(row);
-    });
-    
-        
-        
-        
-      
-  
-      
-
-  
-  
 
 
 
-     
-     
-     
- 
- 
-  
-//api key and url for youtube api
 
-var key="AIzaSyDa1T6i-oZRysekxLrAGqbpH5kuJvYAkdk";
-var URL="https://www.googleapis.com/youtube/v3/search";
 
-//function to call youtube api
-function loadvideos(queryString){
-    var options={
-        part:'snippet',
+database.ref().on("child_added", function (snapChild) {
+    console.log(snapChild.val().feedback);
+    console.log(snapChild.val().name);
+    var row = $("<tr>");
+    // var nameTd=$("<th>").text(snapChild.val().name);
+    // var feedTd=$("<td>").text(snapChild.val().feedback);
+    // row.append(nameTd).append(feedTd);
+    // $("tbody").append(row);
+
+
+    row.append('<div class="card"><div class="card-header" id="reviewHaeder">' + snapChild.val().name + '</div><div class="card-body"><p class="card-text">' + snapChild.val().feedback + '</p></div></div><br>');
+    $("tbody").append(row);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var key = "AIzaSyDa1T6i-oZRysekxLrAGqbpH5kuJvYAkdk";
+var URL = "https://www.googleapis.com/youtube/v3/search";
+
+
+function loadvideos(queryString) {
+    var options = {
+        part: 'snippet',
         key: key,
-        maxResults:10,
-        q:queryString.data.subject
+        maxResults: 10,
+        q: queryString.data.subject
     };
-    $.getJSON(URL,options,function(data){
+    $.getJSON(URL, options, function (data) {
         console.log(data);
         console.log("hello");
         showVideos(data);
     });
 }
+function loadBooks(books) {
 
-//function to call google books api
-function loadBooks(books){
-    
-    var h=books.data.subject;
-    $.getJSON("https://www.googleapis.com/books/v1/volumes?q="+h, function(data){
+    var h = books.data.subject;
+    $.getJSON("https://www.googleapis.com/books/v1/volumes?q=" + h, function (data) {
         console.log(data);
         showBooks(data);
     });
-        
+
 }
 
 //function to display videos on page
 function showVideos(data){
     $("#main").empty();
     console.log(data);
-    for(var i=0; i<data.items.length; i++){
-        $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-3"><iframe  src="https://www.youtube.com/embed/'+data.items[i].id.videoId+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="col-12 col-md-9"><h4>'+data.items[i].snippet.title+'</h4><p>'+data.items[i].snippet.description.substring(0,100)+'</p></div></div></div><br>');
+    for (var i = 0; i < data.items.length; i++) {
+        $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-3"><iframe  src="https://www.youtube.com/embed/' + data.items[i].id.videoId + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="col-12 col-md-9"><h4>' + data.items[i].snippet.title + '</h4><p>' + data.items[i].snippet.description.substring(0, 100) + '</p></div></div></div><br>');
     }
 }
   
