@@ -88,12 +88,6 @@ database.ref().on("child_added", function (snapChild) {
     console.log(snapChild.val().feedback);
     console.log(snapChild.val().name);
     var row = $("<tr>");
-    // var nameTd=$("<th>").text(snapChild.val().name);
-    // var feedTd=$("<td>").text(snapChild.val().feedback);
-    // row.append(nameTd).append(feedTd);
-    // $("tbody").append(row);
-
-
     row.append('<div class="card"><div class="card-header" id="reviewHaeder">' + snapChild.val().name + '</div><div class="card-body"><p class="card-text">' + snapChild.val().feedback + '</p></div></div><br>');
     $("tbody").append(row);
 });
@@ -117,11 +111,11 @@ database.ref().on("child_added", function (snapChild) {
 
 
 
-
+// api key and url for youtube api
 var key = "AIzaSyDa1T6i-oZRysekxLrAGqbpH5kuJvYAkdk";
 var URL = "https://www.googleapis.com/youtube/v3/search";
 
-
+//function to call youtube api for videos
 function loadvideos(queryString) {
     var options = {
         part: 'snippet',
@@ -135,6 +129,8 @@ function loadvideos(queryString) {
         showVideos(data);
     });
 }
+
+//function to call google books api for books
 function loadBooks(books) {
 
     var h = books.data.subject;
@@ -163,7 +159,6 @@ function showBooks(data){
         $("#main").append('<div class="container" id ="mainDisplaySection"><div class="row align-items-center"><div class="col-12 col-md-4"><img src="'+data.items[i].volumeInfo.imageLinks.thumbnail+'" alt="image not found" id="bookImage"></div><div class="col-12 col-md-8"><h4>'+data.items[i].volumeInfo.title+'</h4><p>'+data.items[i].searchInfo.textSnippet.substring(0,100)+'</p><a href="'+data.items[i].volumeInfo.previewLink+'" target="_blank"><button class="btn btn-info" id="bookPreviewBt">Preview</button></a></div></div></div><br>');
      }
 }
-
 
 //On click events for videos that calls the load video function to call youtube api
 
@@ -195,3 +190,15 @@ $("#sqlBooks").on("click", {subject: "my sql"},loadBooks);
 $("#gitBooks").on("click", {subject: "git hub"},loadBooks);
 $("#javaBooks").on("click", {subject: "java"},loadBooks);
 
+
+
+
+
+//function for introduction displayed on page 
+function introduction(){
+    $("#main").empty();
+    $("#main").append("<h1>Introduction</h1>")
+}
+
+
+introduction();

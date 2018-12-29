@@ -1,9 +1,7 @@
 #main{
     padding:0px 2%;
     height:680px;
-    /* border:2px solid rgb(11, 165, 185); */
     overflow: auto;
-    /* margin-left: 2%; */
     background: white;
 }
 #sidebar{
@@ -29,17 +27,9 @@
 p,
 h4,
 #bookPreviewBt{
-    /* padding:2%; */
-    /* float: left; */
     margin-left: 5%;
 
 }
-/* .btn-dark{ 
-    top:4%;
-    margin-left: 1%;
-} */
-
-
 #bookImage{
     height:130px;
     width:50%;
@@ -82,10 +72,7 @@ input.invalid {
 img{
     height:150px;
 }
-/* .dropdown{
-    margin-top: 2%;
-    min-width: 100%;
-} */
+
 *{
     box-sizing: border-box;
 }
