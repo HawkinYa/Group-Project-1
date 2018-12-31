@@ -64,10 +64,14 @@ input.invalid, textarea.invalid {
   border: 2px dashed red;
   }
   
-  input.valid, textarea.valid {
+input.valid, textarea.valid {
     border: 2px solid green;
   }
   
+input:focus, textarea:focus {
+    outline: none;
+} 
+
   #complete {
       color: red;
       font-size: 1.5rem;

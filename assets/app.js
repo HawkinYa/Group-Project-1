@@ -255,8 +255,8 @@ $("#javaBooks").on("click", { subject: "java" }, loadBooks);
 //Function for introduction displayed on page 
 function introduction() {
     $("#main").empty();
-    $("#main").append("<h1>Introduction</h1>");
-    $("#main").append("<p>Resources for anyone learning Web Development and a forum to offer feedback reviews. Click/touch a topic to the left to choose a list of either videos or books for the selected topic. To add your review/feedback/suggestions for the site, click/touch the Feedback Button to the right and enter a valid first and/or last name and your message of 5-100 characters.</p>");
+    $("#main").append("<h1>Introduction</h1><br>");
+    $("#main").append("<h2>*Resources for anyone learning Web Development</h2><br><h2>*Forum to offer feedback reviews</h2><br><h2>*Click/touch a topic to the left to choose a list of either videos or books for the selected topic</h2><br><h2>*To add your review/feedback/suggestions for the site, click/touch the Feedback Button to the right</h2><br><h2>*Enter a valid first and/or last name and your message of 5-100 characters</h2>");
 }
 
 
