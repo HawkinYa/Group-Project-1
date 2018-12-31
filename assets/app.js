@@ -11,9 +11,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var name = "";
 var feedback = "";
-$("#complete").show();
-$("#s-button").hide();
-$("#Feedback").hide();
 
 
 
@@ -46,6 +43,8 @@ $("#feedbackBt").on("click", function() {
     $("#UserName").addClass("invalid");
     $("#Feedback").addClass("invalid");
     $("#complete").show();
+    $("#nameValid").show();
+    $("#fbValid").show();
     $("#s-button").hide();
     $("#Feedback").hide();
      
@@ -66,16 +65,16 @@ $('#UserName').on('input', function () {
     var input = $(this);
     var re = /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/;
     var is_name = re.test(input.val());
-    if (is_name) { input.removeClass("invalid").addClass("valid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").show(); }
-    else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").hide(); }
+    if (is_name) { input.removeClass("invalid").addClass("valid"); $("#s-button").hide(); $("#complete").show(); $("#nameValid").hide(); $("#Feedback").show(); }
+    else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); $("#nameValid").show(); $("#Feedback").hide(); }
 });
 
 $('#Feedback').on('input', function () {
     var input = $(this);
-    var re = /^[A-Za-z (.!?,;"'@#$%&)]{5,45}$/;
+    var re = /^[A-Za-z 0-9 (.!?,;"'@#$%&)]{5,100}$/;
     var is_feed = re.test(input.val());
-    if (is_feed) { input.removeClass("invalid").addClass("valid"); $("#s-button").show(); $("#complete").hide(); }
-    else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); }
+    if (is_feed) { input.removeClass("invalid").addClass("valid"); $("#s-button").show(); $("#complete").hide(); $("#fbValid").hide(); }
+    else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); $("#fbValid").show(); }
 });
 
 
