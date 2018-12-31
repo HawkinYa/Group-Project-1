@@ -64,7 +64,7 @@ function storeValues() {
 
 $('#UserName').on('input', function () {
     var input = $(this);
-    var re = /^[A-Za-z ]{5,25}$/;
+    var re = /^[a-zA-Z][a-zA-Z ]+[a-zA-Z]$/;
     var is_name = re.test(input.val());
     if (is_name) { input.removeClass("invalid").addClass("valid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").show(); }
     else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); $("#Feedback").hide(); }
@@ -72,7 +72,7 @@ $('#UserName').on('input', function () {
 
 $('#Feedback').on('input', function () {
     var input = $(this);
-    var re = /^[A-Za-z ]{5,40}$/;
+    var re = /^[A-Za-z (.!?,;"'@#$%&)]{5,45}$/;
     var is_feed = re.test(input.val());
     if (is_feed) { input.removeClass("invalid").addClass("valid"); $("#s-button").show(); $("#complete").hide(); }
     else { input.removeClass("valid").addClass("invalid"); $("#s-button").hide(); $("#complete").show(); }
