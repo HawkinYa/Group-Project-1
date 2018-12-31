@@ -18,8 +18,10 @@
 
 .display-4, .lead {
     border: solid whitesmoke;
+    border-radius: 5px;
     background: black;
     color: rgb(11, 165, 185);
+    box-shadow: 3px 3px 3px rgb(11, 165, 185);
 }
 
 .display-4 {
