@@ -85,9 +85,9 @@ h4,
 
 
 input.invalid, textarea.invalid {
-  -webkit-animation: invalid .75s infinite alternate;
-  -moz-animation: invalid .75s infinite alternate;
-  animation: invalid .75s infinite alternate;
+  -webkit-animation: invalid 1s infinite alternate;
+  -moz-animation: invalid 1s infinite alternate;
+  animation: invalid 1s infinite alternate;
   border: 2px dashed red;
   }
   
