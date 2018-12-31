@@ -256,7 +256,7 @@ $("#javaBooks").on("click", { subject: "java" }, loadBooks);
 function introduction() {
     $("#main").empty();
     $("#main").append("<h1>Introduction</h1><br>");
-    $("#main").append("<h2>*Resources for anyone learning Web Development</h2><br><h2>*Forum to offer feedback reviews</h2><br><h2>*Click/touch a topic to the left to choose a list of either videos or books for the selected topic</h2><br><h2>*To add your review/feedback/suggestions for the site, click/touch the Feedback Button to the right</h2><br><h2>*Enter a valid first and/or last name and your message of 5-100 characters</h2>");
+    $("#main").append("<h2>*Resources for anyone learning Web Development</h2><br><h2>*Forum to offer feedback reviews</h2><br><h2>*Click/touch a topic to the left (top on mobile) to choose a list of either videos or books for the selected topic</h2><br><h2>*To add your review/feedback/suggestions for the site, click/touch the Feedback Button to the right (scroll down on mobile)</h2><br><h2>*Enter a valid first and/or last name and your message of 5-100 characters</h2>");
     $("#main").append("<p>Site design ©Satinder, Hunter, Luis, Mat<br>Selected icons ©FontAwesome<br></p>");
     
 }

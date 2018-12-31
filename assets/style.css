@@ -9,6 +9,27 @@
     }
 }
 
+#jumbo {
+    background: url("https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.display-4, .lead {
+    border: solid whitesmoke;
+    background: black;
+    color: rgb(11, 165, 185);
+}
+
+.display-4 {
+    text-shadow: 2px 2px snow;
+}
+
+.lead {
+    color: whitesmoke;
+}
+
 #main{
     padding:0px 2%;
     height:680px;
