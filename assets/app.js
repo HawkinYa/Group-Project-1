@@ -54,7 +54,8 @@ function resetForm() {
     $("#nameValid").show();
     $("#fbValid").show();
     $("#s-button").prop("disabled", true);
-    $("#Feedback").hide();
+    $("#Feedback").prop("disabled", true);
+    // $("#Feedback").hide();
 
 }
 
@@ -77,7 +78,8 @@ function nameValid() {
         $("#check").removeClass("far fa-check-circle");
         $("#check").addClass("fas fa-ban");
         $("#nameValid").hide();
-        $("#Feedback").show();
+        $("#Feedback").prop("disabled", false);
+        // $("#Feedback").show();
 
 }
 //Function for hide/show when UserName is invalid
@@ -88,7 +90,8 @@ function nameInvalid() {
         $("#check").removeClass("far fa-check-circle");
         $("#check").addClass("fas fa-ban");
         $("#nameValid").show();
-        $("#Feedback").hide();
+        $("#Feedback").prop("disabled", true);
+        // $("#Feedback").hide();
 
 }
 //Function for hide/show when feedback is valid
