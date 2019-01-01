@@ -97,12 +97,13 @@ input.valid, textarea.valid {
   
 
 
-  #complete {
+  .fas.fa-ban {
       color: red;
       font-size: 1.5rem;
   }
-  #check {
+  .far.fa-check-circle {
       color: yellowgreen;
+      font-size: 1.5rem;
   }
 
   #feedbackBt{
