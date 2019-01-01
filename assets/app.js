@@ -18,7 +18,7 @@ var feedback = "";
 
 
 
-//Function to grab UserName and Feedback input values and store them in the database
+//Function to grab UserName and Feedback input values, store them in the database, reset form, and close modal
 $("#s-button").on("click", function (event) {
     event.preventDefault();
     name = $("#UserName").val().trim();
@@ -33,13 +33,13 @@ $("#s-button").on("click", function (event) {
 
 
 });
-//On click function to reset form when feedback button is clicked
+//On click function to reset form when feedback button or submit button are clicked
 $("#feedbackBt").on("click", function () {
     resetForm();
 
 
 });
-//Function to reset, empty, and set form input classes to invalid
+//Function to reset, empty, set form input classes to invalid, and set #check classes
 function resetForm() {
     $("#UserName").val("");
     $("#Feedback").val("");
@@ -58,7 +58,7 @@ function resetForm() {
 }
 
 
-//Function to store UserName and Feedback in the database
+//Function to store UserName and Feedback values in the database
 function storeValues() {
     database.ref().push({
         name: name,
@@ -68,7 +68,7 @@ function storeValues() {
     })
 
 }
-//Function for hide/show when UserName is valid
+//Function for hide/show form instruction spans, set #check classes, and disable submit/enable Feedback input when UserName is valid
 function nameValid() {
         $("#s-button").prop("disabled", true);
         $("#check").removeClass("far fa-check-circle");
@@ -78,7 +78,7 @@ function nameValid() {
         
 
 }
-//Function for hide/show when UserName is invalid
+//Function for hide/show form instruction spans, set #check classes, and disable submit and Feedback input when UserName is invalid
 function nameInvalid() {
         $("#s-button").prop("disabled", true);
         $("#check").removeClass("far fa-check-circle");
@@ -88,7 +88,7 @@ function nameInvalid() {
     
 
 }
-//Function for hide/show when feedback is valid
+//Function for hide/show form instruction spans, set #check classes, and enable submit when feedback is valid
 function feedValid() {
         $("#s-button").prop("disabled", false);
         $("#check").addClass("far fa-check-circle");
@@ -96,7 +96,7 @@ function feedValid() {
         $("#fbValid").hide();
 
 }
-//Function for hide/show when feedback is invalid
+//Function for hide/show form instruction spans, set #check classes, and disable submit when feedback is invalid
 function feedInvalid() {
         $("#s-button").prop("disabled", true);
         $("#check").removeClass("far fa-check-circle");
