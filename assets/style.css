@@ -94,6 +94,12 @@ input.invalid, textarea.invalid {
 input.valid, textarea.valid {
     border: 2px solid green;
   }
+
+  #Feedback:disabled {
+      background: url("https://previews.123rf.com/images/kebox/kebox1704/kebox170400026/75284571-diagonal-stripes-background-black-and-white.jpg");
+      background-repeat: repeat-y;
+      background-size: cover; 
+  }
   
 
 
