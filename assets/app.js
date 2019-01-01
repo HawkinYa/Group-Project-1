@@ -48,6 +48,7 @@ function resetForm() {
     $("#UserName").addClass("invalid");
     $("#Feedback").addClass("invalid");
     $("#complete").show();
+    $("#check").hide();
     $("#nameValid").show();
     $("#fbValid").show();
     $("#s-button").prop("disabled", true);
@@ -70,6 +71,7 @@ function storeValues() {
 function nameValid() {
         $("#s-button").prop("disabled", true);
         $("#complete").show();
+        $("#check").hide();
         $("#nameValid").hide();
         $("#Feedback").show();
 
@@ -78,6 +80,7 @@ function nameValid() {
 function nameInvalid() {
         $("#s-button").prop("disabled", true);
         $("#complete").show();
+        $("#check").hide();
         $("#nameValid").show();
         $("#Feedback").hide();
 
@@ -86,6 +89,7 @@ function nameInvalid() {
 function feedValid() {
         $("#s-button").prop("disabled", false);
         $("#complete").hide();
+        $("#check").show();
         $("#fbValid").hide();
 
 }
@@ -93,6 +97,7 @@ function feedValid() {
 function feedInvalid() {
         $("#s-button").prop("disabled", true);
         $("#complete").show();
+        $("#check").hide();
         $("#fbValid").show();
 
 }
