@@ -21,13 +21,11 @@ var feedback = "";
 //Function to grab UserName and Feedback input values and store them in the database
 $("#s-button").on("click", function (event) {
     event.preventDefault();
-    $("#complete").show();
-    $("#s-button").hide();
     name = $("#UserName").val().trim();
     feedback = $("#Feedback").val().trim();
     console.log(name + feedback);
-    $("#UserName").val("");
-    $("#Feedback").val("");
+    resetForm();
+    $(".close").click();
     storeValues();
 
 
@@ -52,7 +50,7 @@ function resetForm() {
     $("#complete").show();
     $("#nameValid").show();
     $("#fbValid").show();
-    $("#s-button").hide();
+    $("#s-button").prop("disabled", true);
     $("#Feedback").hide();
 
 }
@@ -70,7 +68,7 @@ function storeValues() {
 }
 //Function for hide/show when UserName is valid
 function nameValid() {
-        $("#s-button").hide();
+        $("#s-button").prop("disabled", true);
         $("#complete").show();
         $("#nameValid").hide();
         $("#Feedback").show();
@@ -78,7 +76,7 @@ function nameValid() {
 }
 //Function for hide/show when UserName is invalid
 function nameInvalid() {
-        $("#s-button").hide();
+        $("#s-button").prop("disabled", true);
         $("#complete").show();
         $("#nameValid").show();
         $("#Feedback").hide();
@@ -86,14 +84,14 @@ function nameInvalid() {
 }
 //Function for hide/show when feedback is valid
 function feedValid() {
-        $("#s-button").show();
+        $("#s-button").prop("disabled", false);
         $("#complete").hide();
         $("#fbValid").hide();
 
 }
 //Function for hide/show when feedback is invalid
 function feedInvalid() {
-        $("#s-button").hide();
+        $("#s-button").prop("disabled", true);
         $("#complete").show();
         $("#fbValid").show();
 
