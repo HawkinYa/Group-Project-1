@@ -47,15 +47,13 @@ function resetForm() {
     $("#UserName").removeClass("valid");
     $("#UserName").addClass("invalid");
     $("#Feedback").addClass("invalid");
-    // $("#complete").show();
-    // $("#check").hide();
     $("#check").removeClass("far fa-check-circle");
     $("#check").addClass("fas fa-ban");
     $("#nameValid").show();
     $("#fbValid").show();
     $("#s-button").prop("disabled", true);
     $("#Feedback").prop("disabled", true);
-    // $("#Feedback").hide();
+    
 
 }
 
@@ -73,32 +71,26 @@ function storeValues() {
 //Function for hide/show when UserName is valid
 function nameValid() {
         $("#s-button").prop("disabled", true);
-        // $("#complete").show();
-        // $("#check").hide();
         $("#check").removeClass("far fa-check-circle");
         $("#check").addClass("fas fa-ban");
         $("#nameValid").hide();
         $("#Feedback").prop("disabled", false);
-        // $("#Feedback").show();
+        
 
 }
 //Function for hide/show when UserName is invalid
 function nameInvalid() {
         $("#s-button").prop("disabled", true);
-        // $("#complete").show();
-        // $("#check").hide();
         $("#check").removeClass("far fa-check-circle");
         $("#check").addClass("fas fa-ban");
         $("#nameValid").show();
         $("#Feedback").prop("disabled", true);
-        // $("#Feedback").hide();
+    
 
 }
 //Function for hide/show when feedback is valid
 function feedValid() {
         $("#s-button").prop("disabled", false);
-        // $("#complete").hide();
-        // $("#check").show();
         $("#check").addClass("far fa-check-circle");
         $("#check").removeClass("fas fa-ban");
         $("#fbValid").hide();
@@ -107,8 +99,6 @@ function feedValid() {
 //Function for hide/show when feedback is invalid
 function feedInvalid() {
         $("#s-button").prop("disabled", true);
-        // $("#complete").show();
-        // $("#check").hide();
         $("#check").removeClass("far fa-check-circle");
         $("#check").addClass("fas fa-ban");
         $("#fbValid").show();
