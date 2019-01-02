@@ -33,6 +33,14 @@
     color: whitesmoke;
 }
 
+#visitors {
+    background: black;
+    border: solid 2px whitesmoke;
+    border-radius: 5px;
+    color: snow;
+    float: right;
+}
+
 #main{
     padding:0px 2%;
     height:680px;
