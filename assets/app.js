@@ -12,6 +12,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var name = "";
 var feedback = "";
+var turnStyle = "";
 
 
 
@@ -21,9 +22,10 @@ var feedback = "";
 //Function to grab UserName and Feedback input values, store them in the database, reset form, and close modal
 $("#s-button").on("click", function (event) {
     event.preventDefault();
+    turnStyle = 1 + $("tbody").children().length;
     name = $("#UserName").val().trim();
     feedback = $("#Feedback").val().trim();
-    console.log(name + feedback);
+    console.log(turnStyle);
     resetForm();
     $(".close").click();
     storeValues();
@@ -62,7 +64,8 @@ function resetForm() {
 function storeValues() {
     database.ref().push({
         name: name,
-        feedback: feedback
+        feedback: feedback,
+        turnStyle: turnStyle
 
 
     })
@@ -151,9 +154,12 @@ $('#Feedback').on('input', function () {
 database.ref().on("child_added", function (snapChild) {
     console.log(snapChild.val().feedback);
     console.log(snapChild.val().name);
+    console.log(snapChild.val().turnStyle);
+    var turnCount = snapChild.val().turnStyle;
     var row = $("<tr>");
     row.append('<div class="card"><div class="card-header" id="reviewHaeder">' + snapChild.val().name + '</div><div class="card-body"><p class="card-text">' + snapChild.val().feedback + '</p></div></div><br>');
     $("tbody").append(row);
+    $("#visitors").text("Visitors" + turnCount);
 });
 
 
