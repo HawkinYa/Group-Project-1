@@ -160,6 +160,7 @@ database.ref().on("child_added", function (snapChild) {
     row.append('<div class="card"><div class="card-header" id="reviewHaeder">' + snapChild.val().name + '</div><div class="card-body"><p class="card-text">' + snapChild.val().feedback + '</p></div></div><br>');
     $("tbody").append(row);
     $("#visitors").text("Visitors" + turnCount);
+    $("#visitors").addClass("fas fa-users");
 });
 
 
