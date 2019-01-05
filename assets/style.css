@@ -1,0 +1,204 @@
+
+
+@keyframes invalid {
+    from {
+        border: 2px dashed red;
+    }
+    to {
+        border: 2px dashed transparent;
+    }
+}
+
+#jumbo {
+    background: url("https://media.giphy.com/media/ko7twHhomhk8E/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.display-4, .lead {
+    border: solid whitesmoke;
+    border-radius: 5px;
+    background: black;
+    color: rgb(11, 165, 185);
+    box-shadow: 3px 3px 3px rgb(11, 165, 185);
+}
+
+.display-4 {
+    color: snow;
+    text-shadow: 2px 2px rgb(11, 165, 185);
+}
+
+.lead {
+    color: whitesmoke;
+}
+
+#visitors {
+    background: black;
+    border: solid 2px whitesmoke;
+    border-radius: 5px;
+    color: snow;
+    float: right;
+}
+
+#main{
+    padding:0px 2%;
+    height:680px;
+    overflow: auto;
+    background: white;
+}
+#sidebar{
+    background: rgb(11, 165, 185);
+    color:white;
+    padding: 2%;
+    height:680px;
+    text-align: center;
+}
+#ReviewsArea{
+    height:600px;
+    overflow: auto;
+}
+.display-6{
+    padding:2%;
+    margin-left: 0px;
+}
+#mainDisplaySection{
+    border:2px solid rgb(11, 165, 185);
+    padding:2%;
+}
+
+p,
+h4,
+#bookPreviewBt{
+    margin-left: 5%;
+
+}
+#bookImage{
+    height:130px;
+    width:50%;
+    margin-left: 5%;
+}
+.dropdown, .dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown:hover, #feedbackBt:hover, #bookPreviewBt:hover, #closeBt:hover, #s-button:hover {
+    color: yellow;
+}
+
+.dropdown-item:hover {
+    background: yellow;
+}
+
+
+
+input.invalid, textarea.invalid {
+  -webkit-animation: invalid 1s ease-in-out infinite alternate;
+  -moz-animation: invalid 1s ease-in-out infinite alternate;
+  animation: invalid 1s ease-in-out infinite alternate;
+  border: 2px dashed red;
+  }
+  
+input.valid, textarea.valid {
+    border: 2px solid green;
+  }
+
+  #Feedback:disabled {
+      background: url("https://previews.123rf.com/images/kebox/kebox1704/kebox170400026/75284571-diagonal-stripes-background-black-and-white.jpg");
+      background-repeat: repeat-y;
+      background-size: cover; 
+  }
+  
+
+
+  .fas.fa-ban {
+      color: red;
+      font-size: 1.5rem;
+  }
+  .far.fa-check-circle {
+      color: yellowgreen;
+      font-size: 1.5rem;
+  }
+
+  #feedbackBt{
+      padding:10px 33%;
+      width:100%;
+  }
+
+#reviewHaeder{
+    background: rgb(188, 199, 201);
+    color:black;
+}
+img{
+    height:150px;
+}
+
+*{
+    box-sizing: border-box;
+}
+.card-header{
+    background: rgb(11, 165, 185);
+    color:white;
+    font-size: 2vmin;
+    text-align: center;
+}
+iframe{
+    height:200px;
+    width:125%;
+}
+.card-group{
+    border:2px solid  rgb(11, 165, 185);
+}
+
+
+
+
+@media screen and (max-width: 640px){
+    .display-6{
+        font-size: 1em;
+        padding-right: 20px;
+    }
+
+    #sidebar{
+        display: flex;
+        padding: 2%;
+        height:120px;
+        overflow: auto;
+        margin-bottom: 10%;
+    }
+    #main{
+        margin-bottom: 10%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+  
+}
+
+@media screen and (max-width:768px) and (min-width:640px){ 
+    .display-6{
+        font-size: 1em;
+        padding-right:50px;
+    }
+
+    #sidebar{
+        display:flex;
+        padding: 2%;
+        height:100px;
+        overflow: auto;
+        margin-bottom: 10%;
+    
+    }
+
+    iframe{
+        width: 100%
+    }
+}
+
+@media screen and (max-width:980px) and (min-width:768px){ 
+    .display-6{
+        font-size: 1em;
+        padding-bottom:10%;
+    }
+}
